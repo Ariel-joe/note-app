@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-    <h2><%= note.title %></h2>
-    <p><%= note.contents %></p>
-    <p><%= note.timestamp %></p>
-    <a href="/notes">Back</a>
+<body class="flex flex-col justify-center items-center">
+
+    <div class="w-[500px]">
+        <h2 class="text-lg text-blue-500 font-semibold w-full line-clamp-2 mt-2"><%= note.title %></h2>
+        <p class="text-sm w-full mt-2"><%= note.contents %></p>
+        <p class="mt-2"><%= note.timestamp %></p>
+
+        <button class="border border-black px-6 py-2 mt-2">
+            <a href="/notes">Back</a>
+        </button>
+    </div>
     
  
 </body>
