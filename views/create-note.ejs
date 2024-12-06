@@ -8,20 +8,19 @@
 </head>
 <body class="flex flex-col justify-center items-center">
     
-    <div class="flex justify-center mt-8">
+    <div class="flex flex-col justify-center mt-8">
         <form action="/notes" method="POST">
             <h1 class="text-xl mb-4 font-semibold">What's on your mind!💡</h1>
-            <label for="titleInput" class="text-gray-800 mb-2">Title</label>
-            <input type="text" id="titleInput" name="title" class="w-full border py-2 mb-4">
+            <!-- <label for="titleInput" class="text-gray-800 mb-2">Title</label> -->
+            <input type="text" id="titleInput" name="title" class="w-full border py-2 mb-4 pl-4" placeholder="Title">
             <br>
             <label for="contentsInput" class="text-gray-800 mb-2">Contents</label>
             <br>
-            <textarea name="contents" id="contentsInput" rows="10" class="w-[300px] border mb-4"></textarea>
+            <textarea name="contents" id="contentsInput" rows="6" class="w-[300px] border mb-4"></textarea>
             <br>
-            <button type="submit" class="bg-black text-white px-6 py-3 w-full mt-3">Create Note</button>
-            <button type="button" class="border border-black px-6 py-2 my-8 w-full"><a href="/notes">Go Back</a></button>
-
+            <button type="submit" class="bg-black text-white px-6 py-3 w-full mt-3">Create Note</button>            
         </form>
+        <button type="button" class="border border-black px-6 py-2 my-8 w-full"><a href="/notes">Go Back</a></button>
 
     </div>
 </body>

@@ -84,5 +84,5 @@ app.use(express.static("public"));
 
 const port = 3100;
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`app listening on port ${port}`);
 });
