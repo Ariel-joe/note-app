@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 import express from "express";
+import dotenv from "dotenv";
+
+
+dotenv.config();
 const app = express();
 app.set("view engine", "ejs");
 
@@ -7,12 +11,10 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const MONGOURI = "mongodb+srv://arieljoe00:kWIQGiIOTFYxYaKf@joe.vnl3j.mongodb.net/Notes?retryWrites=true&w=majority&appName=JOE";
-
 // Connecting to the database
 async function connectDB() {
   try {
-    await mongoose.connect(MONGOURI);
+    await mongoose.connect(process.env.MONGOURI);
     console.log("Connected to MongoDB");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err.message);
@@ -82,7 +84,6 @@ app.post("/notes", async (req, res) => {
 
 app.use(express.static("public"));
 
-const port = 3100;
-app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`app listening on port ${process.env.PORT}`);
 });
