@@ -8,15 +8,19 @@
 </head>
 <body class="flex flex-col justify-center items-center">
 
-    <div class="w-[500px]">
-        <h2 class="text-lg text-blue-500 font-semibold w-full line-clamp-2 mt-2"><%= note.title %></h2>
-        <p class="text-sm w-full mt-2"><%= note.contents %></p>
-        <p class="mt-2"><%= note.timestamp %></p>
-
+    <div class="w-[900px] my-4">
+        <h2 class="text-2xl text-black font-bold mt-2"><%= note.title %></h2>
+        <div class="text-sm w-full mt-2 text-justify">
+            <% note.contents.split('\n').forEach(paragraph => { %>
+                <p class="mb-4"><%= paragraph %></p>
+            <% }) %>
+        </div>
+        <p class="mt-2 text-gray-500"><%= note.timestamp.toDateString() %></p>
+    
         <button class="border border-black px-6 py-2 mt-2">
             <a href="/notes">Back</a>
         </button>
-    </div>
+    </div>   
     
  
 </body>
