@@ -5,7 +5,13 @@ export default {
      "./views/**/*.ejs"
   ],
   theme: {
-    extend: {},
+    extend: {
+
+      fontFamily: {
+        mont: ["Montserrat", "Arial", "sans-serif"]
+      },
+
+    },
   },
   plugins: [require('@tailwindcss/line-clamp'),],
 }
