@@ -7,24 +7,21 @@ dotenv.config();
 const app = express();
 app.set("view engine", "ejs");
 
-// Middleware for parsing JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connecting to the database
 async function connectDB() {
   try {
     await mongoose.connect(process.env.MONGOURI);
     console.log("Connected to MongoDB");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err.message);
-    process.exit(1); // Exit process with failure
+    process.exit(1); 
   }
 }
 
 connectDB();
 
-// Note schema
 const noteSchema = new mongoose.Schema({
     title: { type: String, required: true },
     contents: { type: String, required: true },
@@ -33,7 +30,6 @@ const noteSchema = new mongoose.Schema({
 
 const Note = mongoose.model("singleNote", noteSchema);
 
-// Routes
 app.get("/", (req, res) => {
   res.redirect("/notes");
 });
