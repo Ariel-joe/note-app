@@ -2,15 +2,15 @@
   "name": "note-app",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "npx tailwindcss -i ./src/input.src.css -o ./public/styles.css --watch",
-    "dev": "npx nodemon server.js"
+    "build": "npx tailwindcss -i ./src/css/input.src.css -o ./public/styles.css --watch",
+    "dev": "npx nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
-  "type": "module",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
