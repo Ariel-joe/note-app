@@ -1,5 +1,4 @@
 import express from "express";
-import dotenv from "dotenv";
 import { connectDB } from "./database/config.js";
 import { getHome } from "./controllers/home.js";
 import {
@@ -9,7 +8,6 @@ import {
   postNote,
 } from "./controllers/notes.js";
 
-dotenv.config();
 const app = express();
 app.set("view engine", "ejs");
 

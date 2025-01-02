@@ -1,4 +1,4 @@
-import { Note } from "./database/models/note.js";
+import { Note } from "../database/models/note.js";
 
 // find all notes
 export const getNotes = async (req, res) => {

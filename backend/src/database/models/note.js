@@ -1,4 +1,4 @@
-import { Model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const noteSchema = new Schema(
   {
@@ -10,4 +10,4 @@ const noteSchema = new Schema(
   }
 );
 
-export const Note = new Model ("singleNote", noteSchema)
+export const Note = new model ("singleNote", noteSchema)
