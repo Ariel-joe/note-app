@@ -6,8 +6,8 @@ const noteSchema = new Schema(
     contents: { type: String, required: true },
   },
   {
-    timestamp: { type: Date, default: Date.now },
+    timestamps: true,
   }
 );
 
-export const Note = new model ("singleNote", noteSchema)
+export const Note = new model ("singlenote", noteSchema)

@@ -35,13 +35,12 @@ export const createNote = async (req, res) => {
 
 // posting note to the database
 export const postNote = async (req, res) => {
-  const { title, contents } = req.body;
+  const { title, contents } = req.body; 
 
   try {
-    const newNote = new Note({ title, contents });
-    await newNote.save();
+    const newNote = await Note.create({ title, contents });
 
-    res.redirect("/notes");
+    return res.redirect("/notes")
   } catch (err) {
     console.error("Error creating the note:", err.message);
     res.status(500).send("Failed to create the note");
